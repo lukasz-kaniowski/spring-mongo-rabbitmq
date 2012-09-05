@@ -1,5 +1,7 @@
 package com.lkan.sample.home;
 
+import com.lkan.sample.person.Person;
+import com.lkan.sample.person.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Controller;
@@ -21,13 +23,13 @@ import java.util.Random;
 public class HomeController {
 
 	@Autowired
-	MongoTemplate mongoTemplate;
+	PersonRepository personRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String show(ModelMap model) {
-		mongoTemplate.save(new Person("TestUser-" + new Random().nextInt(100)));
+		personRepository.save(new Person("TestUser-" + new Random().nextInt(100)));
 
-		List<Person> all = mongoTemplate.findAll(Person.class);
+		List<Person> all = personRepository.findAll();
 		model.addAttribute("people", all);
 		model.addAttribute("controllerAttr", "controllerVal");
 		return "/home/home";
