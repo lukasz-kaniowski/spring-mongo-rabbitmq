@@ -2,10 +2,13 @@ package com.lkan.sample.person;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
+import java.util.List;
+
 /**
- * TODO lkan; javadoc
+ * Person repository
  *
  * @author Lukasz Kaniowski
  */
 public interface PersonRepository extends MongoRepository<Person, String> {
+
 }
