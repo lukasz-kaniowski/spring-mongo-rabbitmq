@@ -1,6 +1,5 @@
 package com.lkan.sample.person;
 
-import com.lkan.sample.builder.PersonBuilder;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static com.lkan.sample.builder.PersonBuilder.aParson;
+import static com.lkan.sample.builder.PersonBuilder.aPerson;
 import static java.util.Arrays.asList;
 import static org.fest.assertions.api.Assertions.assertThat;
 
@@ -38,9 +37,9 @@ public class PersonRepositoryTest {
 	}
 
 	@Test
-	public void shouldCreateUserInTestDB() throws Exception {
+	public void shouldCreatePersonInTestDB() throws Exception {
 		//given
-		Person person = aParson().withName("name").build();
+		Person person = aPerson().withName("name").build();
 		//when
 		personRepository.save(person);
 		//then
@@ -49,11 +48,11 @@ public class PersonRepositoryTest {
 
 
 	@Test
-	public void shouldFindUserByNameConvention() throws Exception {
+	public void shouldFindPersonByNameConvention() throws Exception {
 		//given
 		personRepository.save(asList(
-				aParson().withName("Alfred").build(),
-				aParson().withName("Kate").build()));
+				aPerson().withName("Alfred").build(),
+				aPerson().withName("Kate").build()));
 		//when
 		List<Person> persons = personRepository.findByName("Alfred");
 		//then
@@ -63,16 +62,29 @@ public class PersonRepositoryTest {
 
 
 	@Test
-	public void shouldFindUserByQueryAnnotation() throws Exception {
+	public void shouldFindPersonByQueryAnnotation() throws Exception {
 		//given
 		personRepository.save(asList(
-				aParson().withName("Alfred").build(),
-				aParson().withName("Kate").build()));
+				aPerson().withName("Alfred").build(),
+				aPerson().withName("Kate").build()));
 		//when
 		List<Person> persons = personRepository.findQueryExample("Alfred");
 		//then
 		assertThat(persons.size()).isEqualTo(1);
 		assertThat(persons.get(0).getName()).isEqualTo("Alfred");
+	}
+
+
+	@Test
+	public void shouldFindPersonByCustomQuery() throws Exception {
+		//given
+		personRepository.save(asList(
+				aPerson().withName("Alfred").build(),
+				aPerson().withName("Kate").build()));
+		//when
+		List<Person> persons = personRepository.complicatedSearch();
+		//then
+		assertThat(persons.size()).isGreaterThan(0);
 	}
 
 

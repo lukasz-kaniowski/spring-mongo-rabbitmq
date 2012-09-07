@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 import java.util.Random;
 
+import static com.lkan.sample.builder.PersonBuilder.aPerson;
+
 /**
  * TODO lkan; javadoc
  *
@@ -27,7 +29,7 @@ public class HomeController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String show(ModelMap model) {
-		personRepository.save(new PersonBuilder().withName("TestUser-" + new Random().nextInt(100)).build());
+		personRepository.save(aPerson().withName("TestUser-" + new Random().nextInt(100)).build());
 
 		List<Person> all = personRepository.findAll();
 		model.addAttribute("people", all);

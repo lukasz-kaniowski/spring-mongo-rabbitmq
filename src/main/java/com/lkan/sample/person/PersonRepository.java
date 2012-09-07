@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Lukasz Kaniowski
  */
-public interface PersonRepository extends MongoRepository<Person, String> {
+public interface PersonRepository extends MongoRepository<Person, String>, PersonRepositoryCustom {
 
 	List<Person> findByName(String name);
 

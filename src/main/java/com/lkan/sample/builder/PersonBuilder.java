@@ -10,7 +10,7 @@ public class PersonBuilder {
 		person = new Person();
 	}
 
-	public static PersonBuilder aParson() {
+	public static PersonBuilder aPerson() {
 		return new PersonBuilder();
 	}
 
