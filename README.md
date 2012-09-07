@@ -1,5 +1,7 @@
 spring-mongo-rabbitmq
 =====================
+[![Build Status](https://secure.travis-ci.org/lukasz-kaniowski/spring-mongo-rabbitmq.png)](http://secure.travis-ci.org/lukasz-kaniowski/spring-mongo-rabbitmq.png)
+
 
 Sample spring application with mongo and rabbitmq.
 
