@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.List;
 
 import static com.lkan.sample.builder.PersonBuilder.aPerson;
+import static com.lkan.sample.builder.PetBuilder.aCat;
 import static java.util.Arrays.asList;
 import static org.fest.assertions.api.Assertions.assertThat;
 
@@ -54,10 +55,10 @@ public class PersonRepositoryTest {
 				aPerson().withName("Alfred").build(),
 				aPerson().withName("Kate").build()));
 		//when
-		List<Person> persons = personRepository.findByName("Alfred");
+		Person person = personRepository.findByName("Alfred");
 		//then
-		assertThat(persons.size()).isEqualTo(1);
-		assertThat(persons.get(0).getName()).isEqualTo("Alfred");
+		assertThat(person).isNotNull();
+		assertThat(person.getName()).isEqualTo("Alfred");
 	}
 
 
@@ -85,6 +86,19 @@ public class PersonRepositoryTest {
 		List<Person> persons = personRepository.complicatedSearch();
 		//then
 		assertThat(persons.size()).isGreaterThan(0);
+	}
+
+
+	@Test
+	public void shouldAddPetToPerson() throws Exception {
+		//given
+		Person alfred = aPerson().withName("Alfred").withPet(
+				aCat().withName("fluffy").build())
+				.build();
+		//when
+		personRepository.save(alfred);
+		//then
+		assertThat(personRepository.findByName("Alfred").getPets().size()).isEqualTo(1);
 	}
 
 

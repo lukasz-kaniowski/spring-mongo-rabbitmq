@@ -13,21 +13,18 @@ import java.util.List;
  * @author Lukasz Kaniowski
  */
 @Document
-public class Person {
+public class Pet {
+	public enum Type {
+		CAT, DOG
+	}
+
 
 	@Id
 	private String id;
 
 	private String name;
 
-	private List<Pet> pets = new ArrayList<Pet>();
-
-	public Person() {
-	}
-
-	public Person(String name) {
-		this.name = name;
-	}
+	private Type type;
 
 	public String getName() {
 		return name;
@@ -37,12 +34,11 @@ public class Person {
 		this.name = name;
 	}
 
-	public void addPet(Pet pet) {
-		pets.add(pet);
+	public Type getType() {
+		return type;
 	}
 
-	public List<Pet> getPets() {
-		return pets;
+	public void setType(Type type) {
+		this.type = type;
 	}
-
 }

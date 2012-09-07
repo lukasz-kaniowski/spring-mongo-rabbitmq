@@ -2,7 +2,6 @@ package com.lkan.sample.person;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Query;
 
 import java.util.List;
 
@@ -20,4 +19,6 @@ public class PersonRepositoryImpl implements PersonRepositoryCustom {
 	public List<Person> complicatedSearch() {
 		return mongoTemplate.findAll(Person.class);
 	}
+
+
 }
