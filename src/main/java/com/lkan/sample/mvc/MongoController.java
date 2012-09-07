@@ -4,7 +4,10 @@ import com.lkan.sample.person.Person;
 import com.lkan.sample.person.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -26,13 +29,16 @@ public class MongoController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String show(ModelMap model) {
-		personRepository.save(aPerson().withName("TestUser-" + new Random().nextInt(100)).build());
-
 		List<Person> all = personRepository.findAll();
 		model.addAttribute("people", all);
 
-
 		return "mongo";
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	public String addPerson(@ModelAttribute Person person, Model model, BindingResult result) {
+		personRepository.save(person);
+		return "redirect:/mongo/";
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "clearDb")

@@ -22,6 +22,7 @@ Check junit tests [PersonRepositoryTest][1]
 * i18n 
 * Layouts with [sitemesh][3]
 * Styling using [Twitter Bootstrap][4]
+* Ajax calls using jquery
 
 
 [1]: spring-mongo-rabbitmq/blob/master/src/test/java/com/lkan/sample/person/PersonRepositoryTest.java

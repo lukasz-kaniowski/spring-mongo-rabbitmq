@@ -11,7 +11,7 @@
 <h1><s:message code="mongo.title"/></h1>
 
 <div class="span4">
-    <h2>List of people</h2>
+    <legend>List of people</legend>
     <a href="#" id="clearDb" class="btn">Clear Collection</a>
 
     <div id="peopleList">
@@ -19,7 +19,13 @@
     </div>
 </div>
 <div class="span6">
-    <h2>Add New Person</h2>
+    <form method="post">
+        <legend>Add New Person</legend>
+        <label for="name">Name:</label>
+        <input id="name" name="name" type="text" placeholder="name...">
+        <br/>
+        <button type="submit" class="btn">Submit</button>
+    </form>
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
