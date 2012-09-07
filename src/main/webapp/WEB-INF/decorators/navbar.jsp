@@ -5,7 +5,7 @@
 
 <ul class="nav">
     <li ><a href="<c:url value="/" />"><s:message code="navbar.home"/></a></li>
-    <li ><a href="<c:url value="/mongo" />"><s:message code="navbar.mongo"/></a></li>
+    <li ><a href="<c:url value="/mongo/" />"><s:message code="navbar.mongo"/></a></li>
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><s:message code="navbar.lang"/>
             <b class="caret"></b>

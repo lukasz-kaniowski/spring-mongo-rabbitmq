@@ -10,15 +10,27 @@
 <body>
 <h1><s:message code="mongo.title"/></h1>
 
-<p>${controllerAttr}</p>
+<div class="span4">
+    <h2>List of people</h2>
+    <a href="#" id="clearDb" class="btn">Clear Collection</a>
 
-<h2>The following people have been stored in the database:</h2>
-<ul>
-    <c:forEach items="${people}" var="person">
-        <li><p>${person.name}</p></li>
-    </c:forEach>
-</ul>
+    <div id="peopleList">
+        <jsp:include page="peopleList.jsp"/>
+    </div>
+</div>
+<div class="span6">
+    <h2>Add New Person</h2>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
 
+        $("#clearDb").click(function () {
+            $.get("clearDb?ajax=true", function (data) {
+                $('#peopleList').html(data);
+            });
+        });
+    });
+</script>
 </body>
 
 </html>

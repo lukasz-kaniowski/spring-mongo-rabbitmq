@@ -19,7 +19,7 @@ import static com.lkan.sample.builder.PersonBuilder.aPerson;
  * @author Lukasz Kaniowski
  */
 @Controller
-@RequestMapping("/mongo")
+@RequestMapping("/mongo/")
 public class MongoController {
 	@Autowired
 	PersonRepository personRepository;
@@ -30,9 +30,17 @@ public class MongoController {
 
 		List<Person> all = personRepository.findAll();
 		model.addAttribute("people", all);
-		model.addAttribute("controllerAttr", "controllerVal");
 
 
-		return "/mongo";
+		return "mongo";
+	}
+
+	@RequestMapping(method = RequestMethod.GET, value = "clearDb")
+	public String clearDb(ModelMap model) {
+		personRepository.deleteAll();
+
+		List<Person> all = personRepository.findAll();
+		model.addAttribute("people", all);
+		return "peopleList";
 	}
 }

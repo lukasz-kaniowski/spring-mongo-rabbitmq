@@ -11,6 +11,7 @@
     <meta name="author" content="">
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet" type="text/css"/>
     <link href="<c:url value="/resources/css/bootstrap-responsive.min.css" />" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="<c:url value="/resources/js/jquery-1.8.1.min.js" />"></script>
 
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -43,7 +44,6 @@
 
 
 <!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="<c:url value="/resources/js/jquery-1.8.1.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </body>
 </html>
