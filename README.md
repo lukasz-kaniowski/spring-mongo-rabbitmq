@@ -8,7 +8,6 @@ Sample spring application with mongo and rabbitmq.
 This app is live on cloudfoundry [link to app][2]
 
 ## MongoDb - Spring Data
-Done:
 
 * Model mapping
 * Map Reduce example
@@ -17,8 +16,18 @@ Done:
 
 Check junit tests [PersonRepositoryTest][1]
 
+## Frontend 
+
+* Spring mvc
+* i18n 
+* Layouts with [sitemesh][3]
+* Styling using [Twitter Bootstrap][4]* 
+
+
 [1]: blob/master/src/test/java/com/lkan/sample/person/PersonRepositoryTest.java
 [2]: http://ukasz-spring.cloudfoundry.com/
+[3]: http://wiki.sitemesh.org/display/sitemesh/Home
+[4]: http://twitter.github.com/bootstrap/
 
 	
 
