@@ -3,8 +3,22 @@ spring-mongo-rabbitmq
 [![Build Status](https://secure.travis-ci.org/lukasz-kaniowski/spring-mongo-rabbitmq.png)](http://secure.travis-ci.org/lukasz-kaniowski/spring-mongo-rabbitmq)
 
 
-Sample spring application with mongo and rabbitmq.
+Sample spring application with mongo and rabbitmq. 
 
-## MongoDb, Spring Data
-`Person` class is annotated using spring-data-mongo annotations :`@Document @Id`
+This app is live on cloudfoundry [link to app][2]
+
+## MongoDb - Spring Data
+Done:
+
+* Model mapping
+* Map Reduce example
+* Spring data repository (with custom repository methods)
+* Use of mongo template
+
+Check junit tests [PersonRepositoryTest][1]
+
+[1]: blob/master/src/test/java/com/lkan/sample/person/PersonRepositoryTest.java
+[2]: http://ukasz-spring.cloudfoundry.com/
+
+	
 
