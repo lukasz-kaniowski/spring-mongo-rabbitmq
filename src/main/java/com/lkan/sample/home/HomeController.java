@@ -1,9 +1,9 @@
 package com.lkan.sample.home;
 
+import com.lkan.sample.builder.PersonBuilder;
 import com.lkan.sample.person.Person;
 import com.lkan.sample.person.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +27,7 @@ public class HomeController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String show(ModelMap model) {
-		personRepository.save(new Person("TestUser-" + new Random().nextInt(100)));
+		personRepository.save(new PersonBuilder().withName("TestUser-" + new Random().nextInt(100)).build());
 
 		List<Person> all = personRepository.findAll();
 		model.addAttribute("people", all);
