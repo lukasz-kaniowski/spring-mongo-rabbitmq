@@ -21,10 +21,10 @@ Check junit tests [PersonRepositoryTest][1]
 * Spring mvc
 * i18n 
 * Layouts with [sitemesh][3]
-* Styling using [Twitter Bootstrap][4]* 
+* Styling using [Twitter Bootstrap][4]
 
 
-[1]: blob/master/src/test/java/com/lkan/sample/person/PersonRepositoryTest.java
+[1]: ./blob/master/src/test/java/com/lkan/sample/person/PersonRepositoryTest.java
 [2]: http://ukasz-spring.cloudfoundry.com/
 [3]: http://wiki.sitemesh.org/display/sitemesh/Home
 [4]: http://twitter.github.com/bootstrap/
