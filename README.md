@@ -24,7 +24,7 @@ Check junit tests [PersonRepositoryTest][1]
 * Styling using [Twitter Bootstrap][4]
 
 
-[1]: ./blob/master/src/test/java/com/lkan/sample/person/PersonRepositoryTest.java
+[1]: spring-mongo-rabbitmq/blob/master/src/test/java/com/lkan/sample/person/PersonRepositoryTest.java
 [2]: http://ukasz-spring.cloudfoundry.com/
 [3]: http://wiki.sitemesh.org/display/sitemesh/Home
 [4]: http://twitter.github.com/bootstrap/
