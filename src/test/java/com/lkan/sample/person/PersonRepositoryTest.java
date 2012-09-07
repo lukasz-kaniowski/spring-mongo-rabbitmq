@@ -1,5 +1,6 @@
 package com.lkan.sample.person;
 
+import com.lkan.sample.mapReduce.MapReduceResult;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import static com.lkan.sample.builder.PersonBuilder.aPerson;
 import static com.lkan.sample.builder.PetBuilder.aCat;
+import static com.lkan.sample.builder.PetBuilder.aDog;
 import static java.util.Arrays.asList;
 import static org.fest.assertions.api.Assertions.assertThat;
 
@@ -99,6 +101,24 @@ public class PersonRepositoryTest {
 		personRepository.save(alfred);
 		//then
 		assertThat(personRepository.findByName("Alfred").getPets().size()).isEqualTo(1);
+	}
+
+
+	@Test
+	public void shouldCountPetsForPeopleAfterGivenAge() throws Exception {
+		//given
+		personRepository.save(asList(
+				aPerson().withAge(10).withPet(aCat().build()).build(),
+				aPerson().withAge(30).withPet(aCat().build()).build(),
+				aPerson().withAge(31).withPet(aCat().build())
+						.withPet(aDog().build()).build(),
+				aPerson().withAge(32).withPet(aDog().build()).build()
+		));
+		//when
+		MapReduceResult result = personRepository.countPetsForPeopleOlderThan(29);
+		//then
+		assertThat(result.get(Pet.Type.DOG)).isEqualTo(2);
+		assertThat(result.get(Pet.Type.CAT)).isEqualTo(2);
 	}
 
 

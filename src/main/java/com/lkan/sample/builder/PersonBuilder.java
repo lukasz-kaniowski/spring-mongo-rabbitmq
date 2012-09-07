@@ -15,8 +15,15 @@ public class PersonBuilder {
 		return new PersonBuilder();
 	}
 
+
+
 	public PersonBuilder withName(String name) {
 		person.setName(name);
+		return this;
+	}
+
+	public PersonBuilder withAge(int age) {
+		person.setAge(age);
 		return this;
 	}
 
