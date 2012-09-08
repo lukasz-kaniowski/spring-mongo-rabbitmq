@@ -1,6 +1,6 @@
-package com.lkan.sample.person;
+package com.lkan.sample.mongo.repository;
 
-import com.lkan.sample.mapReduce.MapReduceResult;
+import com.lkan.sample.mongo.mapReduce.MapReduceResult;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,9 +11,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static com.lkan.sample.builder.PersonBuilder.aPerson;
-import static com.lkan.sample.builder.PetBuilder.aCat;
-import static com.lkan.sample.builder.PetBuilder.aDog;
+import static com.lkan.sample.mongo.builder.PersonBuilder.aPerson;
+import static com.lkan.sample.mongo.builder.PetBuilder.aCat;
+import static com.lkan.sample.mongo.builder.PetBuilder.aDog;
 import static java.util.Arrays.asList;
 import static org.fest.assertions.api.Assertions.assertThat;
 
@@ -23,10 +23,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
  * @author Lukasz Kaniowski
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {
-		"file:src/main/webapp/WEB-INF/spring/root-context.xml",
-		"file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml"
-})
+@ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/spring/appServlet/mongo.xml")
 public class PersonRepositoryTest {
 
 	@Autowired

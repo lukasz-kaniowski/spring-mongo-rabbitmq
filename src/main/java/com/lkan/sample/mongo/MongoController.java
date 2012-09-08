@@ -1,7 +1,7 @@
-package com.lkan.sample.mvc;
+package com.lkan.sample.mongo;
 
-import com.lkan.sample.person.Person;
-import com.lkan.sample.person.PersonRepository;
+import com.lkan.sample.mongo.repository.Person;
+import com.lkan.sample.mongo.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
-import java.util.Random;
-
-import static com.lkan.sample.builder.PersonBuilder.aPerson;
 
 /**
  * Controller for mongo

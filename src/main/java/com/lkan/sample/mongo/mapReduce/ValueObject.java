@@ -1,4 +1,4 @@
-package com.lkan.sample.mapReduce;
+package com.lkan.sample.mongo.mapReduce;
 
 import java.util.HashMap;
 

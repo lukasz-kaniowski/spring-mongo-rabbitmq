@@ -1,14 +1,13 @@
-package com.lkan.sample.person;
+package com.lkan.sample.mongo.repository;
 
-import com.lkan.sample.mapReduce.MapReduceResult;
-import com.lkan.sample.mapReduce.ValueObject;
+import com.lkan.sample.mongo.mapReduce.MapReduceResult;
+import com.lkan.sample.mongo.mapReduce.ValueObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.mapreduce.MapReduceResults;
 import org.springframework.data.mongodb.core.query.Query;
 
-import javax.management.QueryEval;
 import java.util.List;
 
 import static org.springframework.data.mongodb.core.query.Criteria.where;

@@ -1,4 +1,4 @@
-package com.lkan.sample.person;
+package com.lkan.sample.mongo.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;

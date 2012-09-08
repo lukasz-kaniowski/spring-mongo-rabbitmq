@@ -1,7 +1,6 @@
-package com.lkan.sample.person;
+package com.lkan.sample.mongo.repository;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
@@ -13,18 +12,31 @@ import java.util.List;
  * @author Lukasz Kaniowski
  */
 @Document
-public class Pet {
-	public enum Type {
-		CAT, DOG
-	}
-
+public class Person {
 
 	@Id
 	private String id;
 
 	private String name;
 
-	private Type type;
+	private int age;
+
+	private List<Pet> pets = new ArrayList<Pet>();
+
+	public Person() {
+	}
+
+	public Person(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
 
 	public String getName() {
 		return name;
@@ -34,11 +46,12 @@ public class Pet {
 		this.name = name;
 	}
 
-	public Type getType() {
-		return type;
+	public void addPet(Pet pet) {
+		pets.add(pet);
 	}
 
-	public void setType(Type type) {
-		this.type = type;
+	public List<Pet> getPets() {
+		return pets;
 	}
+
 }

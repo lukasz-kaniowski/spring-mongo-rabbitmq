@@ -1,6 +1,6 @@
-package com.lkan.sample.person;
+package com.lkan.sample.mongo.repository;
 
-import com.lkan.sample.mapReduce.MapReduceResult;
+import com.lkan.sample.mongo.mapReduce.MapReduceResult;
 
 import java.util.List;
 

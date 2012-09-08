@@ -1,7 +1,6 @@
-package com.lkan.sample.builder;
+package com.lkan.sample.mongo.builder;
 
-import com.lkan.sample.person.Person;
-import com.lkan.sample.person.Pet;
+import com.lkan.sample.mongo.repository.Pet;
 
 public class PetBuilder {
 
