@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cloud="http://schema.cloudfoundry.org/spring"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:redis="http://www.springframework.org/schema/redis"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+          http://schema.cloudfoundry.org/spring http://schema.cloudfoundry.org/spring/cloudfoundry-spring-0.7.xsd
+          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/redis http://www.springframework.org/schema/redis/spring-redis.xsd
+          http://www.springframework.org/schema/redis http://www.springframework.org/schema/redis/spring-redis.xsd"
+        >
+
+    <context:property-placeholder location="classpath:redis.properties"/>
+
+    <context:component-scan base-package="com.lkan.sample.redis"/>
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate"
+          p:connectionFactory-ref="redisConnectionFactory"/>
+
+    <redis:listener-container>
+        <redis:listener ref="redisListener" method="handleMessage" topic="redis_channel" />
+    </redis:listener-container>
+
+    <bean id="redisListener" class="com.lkan.sample.redis.RedisMessageListener"/>
+
+    <beans profile="default">
+        <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+              p:hostName="${redis.hostname}" p:port="${redis.port}" p:password="${redis.password}"/>
+    </beans>
+
+    <beans profile="cloud">
+        <cloud:redis-connection-factory id="redisConnectionFactory"/>
+    </beans>
+
+
+</beans>
