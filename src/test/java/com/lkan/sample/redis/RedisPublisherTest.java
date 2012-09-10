@@ -16,7 +16,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/spring/appServlet/redis.xml")
-public class RedisServiceTest {
+public class RedisPublisherTest {
 
 	@Autowired
 	private RedisPublisher redisService;
