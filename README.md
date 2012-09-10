@@ -36,8 +36,8 @@ Check junit tests [RedisRepositoryTest][5] and [RedisPublisherTest][6]
 [2]: http://ukasz-spring.cloudfoundry.com/
 [3]: http://wiki.sitemesh.org/display/sitemesh/Home
 [4]: http://twitter.github.com/bootstrap/
-[5]: ./blob/master/src/test/java/com/lkan/sample/redis/RedisPublisherTest.java
-[6]: ./blob/master/src/test/java/com/lkan/sample/redis/RedisRepositoryTest.java
+[5]: blob/master/src/test/java/com/lkan/sample/redis/RedisRepositoryTest.java
+[6]: blob/master/src/test/java/com/lkan/sample/redis/RedisPublisherTest.java
 
 	
 
