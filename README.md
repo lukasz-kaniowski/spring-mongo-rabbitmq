@@ -32,12 +32,12 @@ Check junit tests [RedisRepositoryTest][5] and [RedisPublisherTest][6]
 * Styling using [Twitter Bootstrap][4]* 
 
 
-[1]: ./blob/master/src/test/java/com/lkan/sample/mongo/repository/PersonRepositoryTest.java
+[1]: spring-mongo-rabbitmq/blob/master/src/test/java/com/lkan/sample/mongo/repository/PersonRepositoryTest.java
 [2]: http://ukasz-spring.cloudfoundry.com/
 [3]: http://wiki.sitemesh.org/display/sitemesh/Home
 [4]: http://twitter.github.com/bootstrap/
-[5]: blob/master/src/test/java/com/lkan/sample/redis/RedisRepositoryTest.java
-[6]: blob/master/src/test/java/com/lkan/sample/redis/RedisPublisherTest.java
+[5]: spring-mongo-rabbitmq/blob/master/src/test/java/com/lkan/sample/redis/RedisRepositoryTest.java
+[6]: spring-mongo-rabbitmq/blob/master/src/test/java/com/lkan/sample/redis/RedisPublisherTest.java
 
 	
 
