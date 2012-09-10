@@ -29,7 +29,7 @@ Check junit tests [RedisRepositoryTest][5] and [RedisPublisherTest][6]
 * Spring mvc
 * i18n 
 * Layouts with [sitemesh][3]
-* Styling using [Twitter Bootstrap][4]* 
+* Styling using [Twitter Bootstrap][4] 
 
 
 [1]: spring-mongo-rabbitmq/blob/master/src/test/java/com/lkan/sample/mongo/repository/PersonRepositoryTest.java
